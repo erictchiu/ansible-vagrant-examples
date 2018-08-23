@@ -4,7 +4,9 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "geerlingguy/centos7"
+  # We start from the latest OL 7 Box
+  config.vm.box = "ol7-latest"
+  config.vm.box_url = "https://yum.oracle.com/boxes/oraclelinux/latest/ol7-latest.box"
   config.ssh.insert_key = false
 
   config.vm.provider :virtualbox do |v|
